@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sber_offline/utils/S.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      supportedLocales: S.supportedLocales,
+      locale: S.locale,
+      localizationsDelegates: S.localizationDelegates,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
