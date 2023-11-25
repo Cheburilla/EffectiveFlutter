@@ -14,7 +14,7 @@ class S {
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
     AppLocalizations.delegate,
-];
+  ];
 
   static AppLocalizations of(BuildContext context) =>
       AppLocalizations.of(context);
