@@ -14,16 +14,16 @@ class TitleBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title, style: titleStyle),
-          if (footnote != null) const SizedBox(height: 8,),
-          if (footnote != null) Text(footnote!, style: footnoteStyle)
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(title, style: titleStyle),
+        if (footnote != null)
+          const SizedBox(
+            height: 8,
+          ),
+        if (footnote != null) Text(footnote!, style: footnoteStyle)
+      ],
     );
   }
 }
