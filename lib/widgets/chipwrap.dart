@@ -37,6 +37,7 @@ class InputChipExampleState extends State<InputChipExample>
     var options = _getChips(context);
     for (int i = 0; i < options.length; i++) {
       FilterChip filterChip = FilterChip(
+        labelPadding: const EdgeInsets.symmetric(horizontal: 4),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -44,12 +45,10 @@ class InputChipExampleState extends State<InputChipExample>
         selected: _selected[i],
         label: Text(
           options[i],
-          style: TextStyle(
-              fontStyle: Theme.of(context).textTheme.labelMedium?.fontStyle,
-              color: Colors.black),
+          style: Theme.of(context).textTheme.labelMedium,
         ),
         backgroundColor: const Color.fromRGBO(0, 0, 0, 0.08),
-        selectedColor: Theme.of(context).primaryColor,
+        selectedColor: const Color.fromRGBO(8, 166, 82, 1),
         onSelected: (bool selected) {
           setState(
             () {
@@ -68,8 +67,8 @@ class InputChipExampleState extends State<InputChipExample>
   Widget build(BuildContext context) {
     return Wrap(
       alignment: WrapAlignment.start,
-      spacing: 4,
-      runSpacing: 4,
+      spacing: 8,
+      runSpacing: 8,
       children: _buildChips(),
     );
   }

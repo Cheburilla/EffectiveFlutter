@@ -45,12 +45,19 @@ TextTheme primaryTextTheme = const TextTheme(
     color: Color.fromRGBO(0, 0, 0, 0.55),
   ),
   labelMedium: TextStyle(
-    fontFamily: "SF Pro Text",
-    fontSize: 14,
-    letterSpacing: -0.406,
-    fontWeight: FontWeight.normal,
-    color: Color.fromRGBO(0, 0, 0, 0.55),
-  ),
+      fontFamily: "SF Pro Text",
+      fontSize: 14,
+      letterSpacing: -0.41,
+      fontWeight: FontWeight.normal,
+      color: Colors.black,
+      height: 1.28571),
+  labelSmall: TextStyle(
+      fontFamily: "SF Pro Text",
+      fontSize: 14,
+      letterSpacing: -0.41,
+      fontWeight: FontWeight.normal,
+      color: Color.fromRGBO(0, 0, 0, 0.55),
+      height: 1.28571),
 );
 
 const ColorScheme colorScheme = ColorScheme.light(

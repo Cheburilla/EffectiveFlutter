@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sber_offline/utils/S.dart';
 import 'package:sber_offline/widgets/chipwrap.dart';
+import 'package:sber_offline/widgets/slims.dart';
+import 'package:sber_offline/widgets/tiles.dart';
 import 'package:sber_offline/widgets/titleblock.dart';
 
 class ProfileView extends StatelessWidget {
@@ -30,27 +32,30 @@ class ProfileView extends StatelessWidget {
                       TitleBlock(
                         title: S.of(context).connected,
                         footnote: S.of(context).subconnected,
-                        titleStyle: Theme.of(context).textTheme.titleLarge,
-                        footnoteStyle: Theme.of(context).textTheme.labelLarge,
                       ),
                       const SizedBox(
-                        height: 30,
-                      ),
-                      TitleBlock(
-                        title: S.of(context).tariffs,
-                        footnote: S.of(context).subtariffs,
-                        titleStyle: Theme.of(context).textTheme.titleLarge,
-                        footnoteStyle: Theme.of(context).textTheme.labelLarge,
+                        height: 20,
                       ),
                       const SizedBox(
-                        height: 30,
+                        height: 130,
+                        child: Tiles(),
+                      ),
+                      const SizedBox(
+                        height: 46,
                       ),
                       TitleBlock(
-                        title: S.of(context).interests,
-                        footnote: S.of(context).subinterests,
-                        titleStyle: Theme.of(context).textTheme.titleLarge,
-                        footnoteStyle: Theme.of(context).textTheme.labelLarge,
+                          title: S.of(context).tariffs,
+                          footnote: S.of(context).subtariffs),
+                      const SizedBox(
+                        height: 12,
                       ),
+                      const Slims(),
+                      const SizedBox(
+                        height: 46,
+                      ),
+                      TitleBlock(
+                          title: S.of(context).interests,
+                          footnote: S.of(context).subinterests),
                       const SizedBox(
                         height: 30,
                       ),
