@@ -10,12 +10,12 @@ class CustomAbsorber extends StatelessWidget {
       handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
       sliver: SliverAppBar(
         leading: IconButton(
-          icon: Image.asset("cross.png"),
+          icon: Image.asset("assets/cross.png"),
           onPressed: () => (),
         ),
         actions: [
           IconButton(
-            icon: Image.asset("exit.png"),
+            icon: Image.asset("assets/exit.png"),
             onPressed: () => (),
           ),
         ],
@@ -27,17 +27,14 @@ class CustomAbsorber extends StatelessWidget {
         flexibleSpace: FlexibleSpaceBar(
           expandedTitleScale: 1.5,
           collapseMode: CollapseMode.pin,
-          stretchModes: const <StretchMode>[
-            StretchMode.zoomBackground,
-          ],
           centerTitle: true,
           title: Text(
             S.of(context).name,
             style: Theme.of(context).textTheme.displayMedium,
           ),
           background: Padding(
-            padding: const EdgeInsets.only(bottom: 36),
-            child: Image.asset("photo.png",
+            padding: const EdgeInsets.only(bottom: 36, top: 30),
+            child: Image.asset("assets/photo.png",
                 alignment: Alignment.center, width: 110, height: 110),
           ),
         ),
@@ -85,7 +82,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      color: Colors.white,
+      color: Theme.of(context).colorScheme.secondaryContainer,
       child: _tabBar,
     );
   }

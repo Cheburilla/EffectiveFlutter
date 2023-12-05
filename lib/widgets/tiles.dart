@@ -15,7 +15,7 @@ class Tiles extends StatelessWidget {
           decelerationRate: ScrollDecelerationRate.fast),
       children: [
         Tile(
-          image: "flag.png",
+          image: "assets/flag.png",
           text: S.of(context).primecard,
           titleBlock: TitleBlock(
             height: 2,
@@ -26,7 +26,7 @@ class Tiles extends StatelessWidget {
           ),
         ),
         Tile(
-          image: "percent_filled.png",
+          image: "assets/percent_filled.png",
           text: S.of(context).transfercard,
           titleBlock: TitleBlock(
             height: 2,

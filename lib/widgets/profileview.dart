@@ -26,38 +26,35 @@ class ProfileView extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      const SizedBox(
-                        height: 30,
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: TitleBlock(
+                          title: S.of(context).connected,
+                          footnote: S.of(context).subconnected,
+                        ),
                       ),
-                      TitleBlock(
-                        title: S.of(context).connected,
-                        footnote: S.of(context).subconnected,
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 46),
+                        child: SizedBox(
+                          height: 130,
+                          child: Tiles(),
+                        ),
                       ),
-                      const SizedBox(
-                        height: 20,
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 12),
+                        child: TitleBlock(
+                            title: S.of(context).tariffs,
+                            footnote: S.of(context).subtariffs),
                       ),
-                      const SizedBox(
-                        height: 130,
-                        child: Tiles(),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: Slims(),
                       ),
-                      const SizedBox(
-                        height: 46,
-                      ),
-                      TitleBlock(
-                          title: S.of(context).tariffs,
-                          footnote: S.of(context).subtariffs),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      const Slims(),
-                      const SizedBox(
-                        height: 46,
-                      ),
-                      TitleBlock(
-                          title: S.of(context).interests,
-                          footnote: S.of(context).subinterests),
-                      const SizedBox(
-                        height: 30,
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 16),
+                        child: TitleBlock(
+                            title: S.of(context).interests,
+                            footnote: S.of(context).subinterests),
                       ),
                       const InputChipExample(),
                     ],

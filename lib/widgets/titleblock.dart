@@ -19,15 +19,19 @@ class TitleBlock extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title,
-            style: titleStyle ?? Theme.of(context).textTheme.titleLarge),
+        Text(
+          title,
+          style: titleStyle ?? Theme.of(context).textTheme.titleLarge,
+        ),
         if (footnote != null)
           SizedBox(
             height: height ?? 8,
           ),
         if (footnote != null)
-          Text(footnote!,
-              style: footnoteStyle ?? Theme.of(context).textTheme.labelLarge)
+          Text(
+            footnote!,
+            style: footnoteStyle ?? Theme.of(context).textTheme.labelLarge,
+          )
       ],
     );
   }

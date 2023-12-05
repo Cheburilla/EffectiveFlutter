@@ -10,7 +10,7 @@ class Slims extends StatelessWidget {
     return Column(
       children: [
         Slim(
-          image: "speedometer.png",
+          image: "assets/speedometer.png",
           titleBlock: TitleBlock(
             title: S.of(context).limit,
             footnote: S.of(context).sublimit,
@@ -18,8 +18,9 @@ class Slims extends StatelessWidget {
             height: 2,
           ),
         ),
+        const SlimDivider(),
         Slim(
-          image: "percent.png",
+          image: "assets/percent.png",
           titleBlock: TitleBlock(
             title: S.of(context).fees,
             footnote: S.of(context).subfees,
@@ -27,8 +28,9 @@ class Slims extends StatelessWidget {
             height: 2,
           ),
         ),
+        const SlimDivider(),
         Slim(
-          image: "arrows.png",
+          image: "assets/arrows.png",
           titleBlock: TitleBlock(
             title: S.of(context).tariffs_info,
             titleStyle: Theme.of(context).textTheme.bodyMedium,
@@ -51,35 +53,55 @@ class Slim extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      child: Row(
-        children: [
-          Image.asset(
-            image,
-            width: 36,
-            height: 36,
-          ),
-          const SizedBox(
-            width: 12,
-          ),
-          SizedBox(
-            width: 263,
-            child: titleBlock,
-          ),
-          const Spacer(),
-          const Icon(
-            Icons.keyboard_arrow_right_rounded,
-            size: 24,
-            color: Color.fromRGBO(
-              0,
-              0,
-              0,
-              0.32,
+    final mediaQuery = MediaQuery.sizeOf(context).width;
+    return InkWell(
+      onTap: () => (),
+      borderRadius: BorderRadius.circular(12),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Image.asset(
+                    image,
+                    width: 36,
+                    height: 36,
+                  ),
+                ),
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: mediaQuery - (64 + 48)),
+                  child: titleBlock,
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: Icon(
+                    Icons.keyboard_arrow_right_rounded,
+                    size: 24,
+                    color: Theme.of(context).unselectedWidgetColor,
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+    );
+  }
+}
+
+class SlimDivider extends StatelessWidget {
+  const SlimDivider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Divider(
+      height: 1,
+      indent: 48,
+      color: Theme.of(context).dividerColor,
     );
   }
 }
